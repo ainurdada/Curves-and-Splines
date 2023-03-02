@@ -3,6 +3,7 @@
 This is results of my learning curves and splines.
 ***
 ## Bézier curve
+![BezierCurve](https://user-images.githubusercontent.com/70095026/222391334-2aa7aea3-6342-4bbd-87d9-0c733c3de936.gif)
 
 ### How it works?
 ```C#
