@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [ExecuteAlways]
 public class TestCatmull : MonoBehaviour
 {
+    public Text scaleText;
+
     public Transform[] points;
 
     [Range(0f, 1f)]
     public float scale;
     void Update()
     {
-
+        scaleText.text = "scale = " + scale; 
 
     }
 

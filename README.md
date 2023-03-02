@@ -12,7 +12,7 @@ type |  Where I can use it?
 :----:|:---------------------:
 [Bézier](#beziersection) | shapes, fonts & vector graphics
 [Hermite](#hermitesection) | animation, physics sim & interpolation
-Catmull-Rom <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | animation & path smoothing
+[Catmull-Rom](#catmullsection) <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | animation & path smoothing
 B-Spline <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | curvature-sensetive shapes &<br> animations, such as camera paths
 ***
 
@@ -52,6 +52,36 @@ public static Vector3 GetPoint(Vector3 p0, Vector3 v0, Vector3 p1, Vector3 v1, f
             Mathf.Pow(t, 3) * (2 * p0 + v0 - 2 * p1 + v1);
     }
 ```
+***
+
+## <a id="catmullsection">Catmull-Rom splines
+
+### How it works?
+Getting velocities for points:
+```C#
+public static Vector3[] GetVelocities(Transform[] points, float scale)
+    {
+        Vector3[] velocities = new Vector3[points.Length];
+        for (int i = 0; i < points.Length; i++)
+        {
+            if (i == 0)
+            {
+                velocities[0] = (2 * points[1].position - 2 * points[0].position) * scale;
+                continue;
+            }
+            if (i == points.Length - 1)
+            {
+                velocities[i] = (2 * points[i].position - 2 * points[i - 1].position) * scale;
+                break;
+            }
+            velocities[i] = (points[i + 1].position - points[i - 1].position) * scale;
+        }
+        return velocities;
+    }
+```
+We can change ```scale``` (from 0 to 1) to control curvation degree. But in Catmull-Rom method it's 0,5.  
+
+For getting points use [Hermite method](#hermitesection)<br>
 ***
 
 ### sources and inspiration
