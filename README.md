@@ -11,7 +11,7 @@ This is results of my learning curves and splines.
 type |  Where I can use it?
 :----:|:---------------------:
 [Bézier](#beziersection) | shapes, fonts & vector graphics
-[Hermite](#hermitesection) <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | animation, physics sim & interpolation
+[Hermite](#hermitesection) | animation, physics sim & interpolation
 Catmull-Rom <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | animation & path smoothing
 B-Spline <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | curvature-sensetive shapes &<br> animations, such as camera paths
 ***
@@ -37,8 +37,10 @@ public static Vector3 GetPoint(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, f
 
 ## <a id="hermitesection">Hermite curve
 
+![Hermite](https://user-images.githubusercontent.com/70095026/222453698-4724b1de-8a2b-474b-9f12-f8d95e8e9d7a.gif)
+    
 ### How it works?
-![BezierCurve](https://user-images.githubusercontent.com/70095026/222417678-3018c701-a7ef-42e6-83f5-b23be96f3715.png)
+![HermiteCurve](https://user-images.githubusercontent.com/70095026/222454752-3421b256-4d85-437c-9d5e-dcf62a2838df.png)
 ```C#
 public static Vector3 GetPoint(Vector3 p0, Vector3 v0, Vector3 p1, Vector3 v1, float t)
     {
