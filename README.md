@@ -55,7 +55,7 @@ public static Vector3 GetPoint(Vector3 p0, Vector3 v0, Vector3 p1, Vector3 v1, f
 ***
 
 ## <a id="catmullsection">Catmull-Rom splines
-
+![Catmull](https://user-images.githubusercontent.com/70095026/222519774-63d88ab6-d2ec-4d29-8a1a-80e2f03a99a3.gif)
 ### How it works?
 Getting velocities for points:
 ```C#
