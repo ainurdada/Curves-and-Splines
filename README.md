@@ -11,7 +11,7 @@ This is results of my learning curves and splines.
 type |  Where I can use it?
 :----:|:---------------------:
 [Bézier](#beziersection) | shapes, fonts & vector graphics
-Hermite <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | animation, physics sim & interpolation
+[Hermite](#hermitesection) <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | animation, physics sim & interpolation
 Catmull-Rom <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | animation & path smoothing
 B-Spline <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | curvature-sensetive shapes &<br> animations, such as camera paths
 ***
@@ -31,6 +31,23 @@ public static Vector3 GetPoint(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, f
             t * (-3 * p0 + 3 * p1) +
             Mathf.Pow(t, 2) * (3 * p0 - 6 * p1 + 3 * p2) +
             Mathf.Pow(t, 3) * (-p0 + 3 * p1 - 3 * p2 + p3);
+    }
+```
+***
+
+## <a id="hermitesection">Hermite curve
+
+### How it works?
+![BezierCurve](https://user-images.githubusercontent.com/70095026/222417678-3018c701-a7ef-42e6-83f5-b23be96f3715.png)
+```C#
+public static Vector3 GetPoint(Vector3 p0, Vector3 v0, Vector3 p1, Vector3 v1, float t)
+    {
+        t = Mathf.Clamp01(t);
+        return
+            p0 +
+            t * v0 +
+            Mathf.Pow(t, 2) * (-3 * p0 - 2 * v0 + 3 * p1 - v1) +
+            Mathf.Pow(t, 3) * (2 * p0 + v0 - 2 * p1 + v1);
     }
 ```
 ***
