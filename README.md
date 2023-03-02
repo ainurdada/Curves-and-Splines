@@ -6,11 +6,14 @@
 This is results of my learning curves and splines.
 ***
 
-## Types
+## Methods
 
 type |  Where I can use it?
-----|---------------------
+:----:|:---------------------:
 [Bézier](#beziersection) | shapes, fonts & vector graphics
+Hermite <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | animation, physics sim & interpolation
+Catmull-Rom <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | animation & path smoothing
+B-Spline <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | curvature-sensetive shapes &<br> animations, such as camera paths
 ***
 
 ## <a id="beziersection">Bézier curve
@@ -32,7 +35,7 @@ public static Vector3 GetPoint(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, f
 ```
 ***
 
-### sources and inspiration:
+### sources and inspiration
 
 * [Freya Holmér](https://www.youtube.com/@Acegikmo/featured)
 * [Wikipedia](https://en.wikipedia.org/wiki/Bezier_curve)
