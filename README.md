@@ -12,7 +12,7 @@ type |  Where I can use it?
 :----:|:---------------------:
 [Bézier](#beziersection) | shapes, fonts & vector graphics
 [Hermite](#hermitesection) | animation, physics sim & interpolation
-[Catmull-Rom](#catmullsection) <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | animation & path smoothing
+[Catmull-Rom](#catmullsection) | animation & path smoothing
 B-Spline <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | curvature-sensetive shapes &<br> animations, such as camera paths
 ***
 
@@ -80,6 +80,7 @@ public static Vector3[] GetVelocities(Transform[] points, float scale)
     }
 ```
 We can change ```scale``` (from 0 to 1) to control curvation degree. But in Catmull-Rom method it's 0,5.  
+![CatmullScale](https://user-images.githubusercontent.com/70095026/222517405-ecaba1a1-9af7-48bb-b772-275a93b51f69.gif)
 
 For getting points use [Hermite method](#hermitesection)<br>
 ***
