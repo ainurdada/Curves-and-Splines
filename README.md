@@ -21,8 +21,8 @@ B-Spline <br><img src ="https://img.shields.io/badge/status-on%20working-red"> |
 ![BezierCurve](https://user-images.githubusercontent.com/70095026/222391334-2aa7aea3-6342-4bbd-87d9-0c733c3de936.gif)
 
 ### How it works?
+![BezierVisualisation](https://user-images.githubusercontent.com/70095026/222672969-e8243aeb-ad4b-4cdf-a50f-15b24948141a.gif)  
 ![BezierCurve](https://user-images.githubusercontent.com/70095026/222417678-3018c701-a7ef-42e6-83f5-b23be96f3715.png)  
-![BezierVisualisation](https://user-images.githubusercontent.com/70095026/222672969-e8243aeb-ad4b-4cdf-a50f-15b24948141a.gif)
 ```C#
 public static Vector3 GetPoint(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
     {
