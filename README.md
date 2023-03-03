@@ -60,22 +60,22 @@ public static Vector3 GetPoint(Vector3 p0, Vector3 v0, Vector3 p1, Vector3 v1, f
 ### How it works?
 Getting velocities for points:
 ```C#
-public static Vector3[] GetVelocities(Transform[] points, float scale)
+public static Vector3[] GetVelocities(Vector3[] points, float scale)
     {
         Vector3[] velocities = new Vector3[points.Length];
         for (int i = 0; i < points.Length; i++)
         {
             if (i == 0)
             {
-                velocities[0] = (2 * points[1].position - 2 * points[0].position) * scale;
+                velocities[0] = (2 * points[1] - 2 * points[0]) * scale;
                 continue;
             }
             if (i == points.Length - 1)
             {
-                velocities[i] = (2 * points[i].position - 2 * points[i - 1].position) * scale;
+                velocities[i] = (2 * points[i] - 2 * points[i - 1]) * scale;
                 break;
             }
-            velocities[i] = (points[i + 1].position - points[i - 1].position) * scale;
+            velocities[i] = (points[i + 1] - points[i - 1]) * scale;
         }
         return velocities;
     }
