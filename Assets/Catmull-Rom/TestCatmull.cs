@@ -20,21 +20,12 @@ public class TestCatmull : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Vector3[] velocities = new Vector3[points.Length];
-        for (int i = 0; i < points.Length; i++)
+        Vector3[] pointsPosition = new Vector3[points.Length];
+        for(int i = 0; i < pointsPosition.Length; i++)
         {
-            if (i == 0)
-            {
-                velocities[0] = (2 * points[1].position - 2 * points[0].position) * scale;
-                continue;
-            }
-            if (i == points.Length - 1)
-            {
-                velocities[i] = (2 * points[i].position - 2 * points[i - 1].position) * scale;
-                break;
-            }
-            velocities[i] = (points[i + 1].position - points[i - 1].position) * scale;
+            pointsPosition[i] = points[i].position;
         }
+        Vector3[] velocities = CatmullRom.GetVelocities(pointsPosition, scale);
 
         int sigmentNumber = 20;
         Vector3 previousePoint = points[0].position;
