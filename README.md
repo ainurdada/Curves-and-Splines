@@ -104,7 +104,7 @@ $$
 
 Getting velocities for points:
 ```C#
-public static Vector3[] GetVelocities(Vector3[] points, float scale)
+public static Vector3[] GetVelocities(Vector3[] points, float scale = .5f)
     {
         Vector3[] velocities = new Vector3[points.Length];
         for (int i = 0; i < points.Length; i++)
