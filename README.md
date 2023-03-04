@@ -13,7 +13,7 @@ type |  Where I can use it?
 [Bézier](#beziersection) | shapes, fonts & vector graphics
 [Hermite](#hermitesection) | animation, physics sim & interpolation
 [Catmull-Rom](#catmullsection) | animation & path smoothing
-B-Spline <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | curvature-sensetive shapes &<br> animations, such as camera paths
+[B-Spline](#bsplinelsection) <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | curvature-sensetive shapes &<br> animations, such as camera paths
 ***
 
 ## <a id="beziersection">Bézier curve
@@ -55,7 +55,7 @@ public static Vector3 GetPoint(Vector3 p0, Vector3 v0, Vector3 p1, Vector3 v1, f
 ```
 ***
 
-## <a id="catmullsection">Catmull-Rom splines
+## <a id="catmullsection">Catmull-Rom spline
 ![Catmull](https://user-images.githubusercontent.com/70095026/222519774-63d88ab6-d2ec-4d29-8a1a-80e2f03a99a3.gif)
 ### How it works?
 Getting velocities for points:
@@ -84,6 +84,22 @@ We can change ```scale``` (from 0 to 1) to control curvation degree. But in Catm
 ![CatmullScale](https://user-images.githubusercontent.com/70095026/222517405-ecaba1a1-9af7-48bb-b772-275a93b51f69.gif)
 
 For getting points use [Hermite method](#hermitesection)<br>
+***
+
+## <a id="bsplinelsection">B-spline
+### How it works?
+```C#
+public static Vector3 GetPoint(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
+    {
+        t = Mathf.Clamp01(t);
+        float k = 1f / 6f;
+        return
+            (p0 + 4 *p1 + p2) * k +
+            t * k * (-3 * p0 + 3 * p2) +
+            Mathf.Pow(t, 2) * k * (3 * p0 - 6 * p1 + 3 * p2) +
+            Mathf.Pow(t, 3) * k * (-p0 + 3 * p1 - 3 * p2 + p3);
+    }
+```
 ***
 
 ### sources and inspiration

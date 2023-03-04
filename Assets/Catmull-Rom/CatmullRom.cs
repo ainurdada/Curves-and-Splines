@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public static class CatmullRom
 {
-    public static Vector3[] GetVelocities(Vector3[] points, float scale)
+    public static Vector3[] GetVelocities(Vector3[] points, float scale = 0.5f)
     {
         Vector3[] velocities = new Vector3[points.Length];
         for (int i = 0; i < points.Length; i++)
