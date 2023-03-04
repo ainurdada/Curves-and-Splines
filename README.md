@@ -22,8 +22,9 @@ A Bézier curve is formed by four points. Two of them are control points, namely
 ![BezierVisualisation](https://user-images.githubusercontent.com/70095026/222672969-e8243aeb-ad4b-4cdf-a50f-15b24948141a.gif)  
 ![BezierCurve](https://user-images.githubusercontent.com/70095026/222417678-3018c701-a7ef-42e6-83f5-b23be96f3715.png)  
 
-Matrix Form: 
-$$P(t)=
+Matrix Form:
+$$
+P(t)=
 \begin{bmatrix} 
 1 & t & t^2 & t^3
 \end{bmatrix}
