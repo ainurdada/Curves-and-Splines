@@ -13,7 +13,7 @@ type |  Where I can use it?
 [Bézier](#beziersection) | shapes, fonts & vector graphics
 [Hermite](#hermitesection) | animation, physics sim & interpolation
 [Catmull-Rom](#catmullsection) | animation & path smoothing
-[B-Spline](#bsplinelsection) <br><img src ="https://img.shields.io/badge/status-on%20working-red"> | curvature-sensetive shapes &<br> animations, such as camera paths
+[B-Spline](#bsplinelsection) | curvature-sensetive shapes &<br> animations, such as camera paths
 ***
 
 ## <a id="beziersection">Bézier curve
@@ -87,6 +87,7 @@ For getting points use [Hermite method](#hermitesection)<br>
 ***
 
 ## <a id="bsplinelsection">B-spline
+![BSpline](https://user-images.githubusercontent.com/70095026/222896302-37c3aa92-2f4b-44fe-8935-8e9061613141.gif)
 ### How it works?
 ```C#
 public static Vector3 GetPoint(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
