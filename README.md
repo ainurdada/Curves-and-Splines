@@ -133,6 +133,22 @@ For getting points use [Hermite method](#hermitesection)<br>
 ## <a id="bsplinelsection">B-spline
 ![BSpline](https://user-images.githubusercontent.com/70095026/222896302-37c3aa92-2f4b-44fe-8935-8e9061613141.gif)
 ### How it works?
+
+Matrix form:
+  
+$$
+    P(t)=
+    \left\lbrack \matrix{1 & t & t^2 & t^3} \right\rbrack * {1 \over 6}
+    \left\lbrack \matrix{1 & 4 & 1 & 0 \cr
+                        -3 & 0 & 3 & 0 \cr
+                        3 & -6 & 3 & 0 \cr
+                        -1 & 3 & -3 & 1} \right\rbrack
+    \left\lbrack \matrix{P_0 \cr
+                        P_1 \cr
+                        P_2 \cr
+                        P_3} \right\rbrack
+$$
+            
 ```C#
 public static Vector3 GetPoint(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
     {
