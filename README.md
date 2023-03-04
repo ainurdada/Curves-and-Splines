@@ -21,6 +21,25 @@ A Bézier curve is formed by four points. Two of them are control points, namely
 ### How it works?
 ![BezierVisualisation](https://user-images.githubusercontent.com/70095026/222672969-e8243aeb-ad4b-4cdf-a50f-15b24948141a.gif)  
 ![BezierCurve](https://user-images.githubusercontent.com/70095026/222417678-3018c701-a7ef-42e6-83f5-b23be96f3715.png)  
+
+Matrix Form: 
+$$P(t)=
+\begin{bmatrix} 
+1 & t & t^2 & t^3
+\end{bmatrix}
+\begin{bmatrix} 
+    1 & 0 & 0 & 0 \\ 
+    -3 & 3 & 0 & 0\\
+    3 & -6 & 3 & 0 \\
+    -1 & 3 & -3 & 1
+\end{bmatrix}
+\begin{bmatrix} 
+    P_0 \\ 
+    P_1\\
+    P_2 \\
+    P_3
+\end{bmatrix}
+$$
 ```C#
 public static Vector3 GetPoint(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
     {
