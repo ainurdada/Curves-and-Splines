@@ -1,5 +1,4 @@
-<h1 align="center"> Curves and Spline<br>
-<img src ="https://img.shields.io/badge/status-on%20working-red" </h1>
+<h1 align="center"> Curves and Spline</h1>
 
 ## Description
 
