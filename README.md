@@ -1,7 +1,6 @@
 <h1 align="center"> Curves and Spline</h1>
 
 ## Description
-
 This is results of my learning curves and splines.
 ***
 
@@ -16,7 +15,7 @@ type |  Where I can use it?
 ***
 
 ## <a id="beziersection">Bézier curve
-
+A Bézier curve is formed by four points. Two of them are control points, namely the beginning and the end of the curve. The other two are auxiliary points, the curve does not pass through them, but they are needed to calculate the curve itself.
 ![BezierCurve](https://user-images.githubusercontent.com/70095026/222391334-2aa7aea3-6342-4bbd-87d9-0c733c3de936.gif)
 
 ### How it works?
@@ -36,7 +35,7 @@ public static Vector3 GetPoint(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, f
 ***
 
 ## <a id="hermitesection">Hermite curve
-
+Unlike the [Bézier curve](#beziersection), the Hermite curve is formed by two points (the beginning and the end of the curve) and by vectors coming out of these points, in which these vectors are realized as tangents to the curve
 ![Hermite](https://user-images.githubusercontent.com/70095026/222453698-4724b1de-8a2b-474b-9f12-f8d95e8e9d7a.gif)
     
 ### How it works?
