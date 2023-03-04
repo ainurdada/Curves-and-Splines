@@ -15,7 +15,7 @@ type |  Where I can use it?
 ***
 
 ## <a id="beziersection">Bézier curve
-A Bézier curve is formed by four points. Two of them are control points, namely the beginning and the end of the curve. The other two are auxiliary points, the curve does not pass through them, but they are needed to calculate the curve itself.
+A Bézier curve is formed by four points. Two of them are control points, namely the beginning and the end of the curve. The other two are auxiliary points, the curve does not pass through them, but they are needed to calculate the curve itself.  
 ![BezierCurve](https://user-images.githubusercontent.com/70095026/222391334-2aa7aea3-6342-4bbd-87d9-0c733c3de936.gif)
 
 ### How it works?
