@@ -55,6 +55,21 @@ Unlike the [Bézier curve](#beziersection), the Hermite curve is formed by two p
     
 ### How it works?
 ![HermiteCurve](https://user-images.githubusercontent.com/70095026/222454752-3421b256-4d85-437c-9d5e-dcf62a2838df.png)
+    
+Matrix form:
+    
+$$
+    P(t)=
+    \left\lbrack \matrix{1 & t & t^2 & t^3} \right\rbrack
+    \left\lbrack \matrix{1 & 0 & 0 & 0 \cr
+                        0 & 1 & 0 & 0 \cr
+                        3 & -2 & 3 & -1 \cr
+                        2 & 1 & -2 & 1} \right\rbrack
+    \left\lbrack \matrix{P_0 \cr
+                        v_0 \cr
+                        P_1 \cr
+                        v_1} \right\rbrack
+$$
 ```C#
 public static Vector3 GetPoint(Vector3 p0, Vector3 v0, Vector3 p1, Vector3 v1, float t)
     {
