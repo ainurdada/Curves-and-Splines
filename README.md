@@ -86,6 +86,22 @@ public static Vector3 GetPoint(Vector3 p0, Vector3 v0, Vector3 p1, Vector3 v1, f
 ## <a id="catmullsection">Catmull-Rom spline
 ![Catmull](https://user-images.githubusercontent.com/70095026/222519774-63d88ab6-d2ec-4d29-8a1a-80e2f03a99a3.gif)
 ### How it works?
+
+Matrix form:
+    
+$$
+    P(t)=
+    \left\lbrack \matrix{1 & t & t^2 & t^3} \right\rbrack * {1 \over 2}
+    \left\lbrack \matrix{0 & 2 & 0 & 0 \cr
+                        -1 & 0 & 1 & 0 \cr
+                        2 & -5 & 4 & -1 \cr
+                        -1 & 3 & -3 & 1} \right\rbrack
+    \left\lbrack \matrix{P_0 \cr
+                        P_1 \cr
+                        P_2 \cr
+                        P_3} \right\rbrack
+$$
+
 Getting velocities for points:
 ```C#
 public static Vector3[] GetVelocities(Vector3[] points, float scale)
