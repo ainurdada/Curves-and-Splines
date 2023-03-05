@@ -135,6 +135,7 @@ We can change `scale` (from 0 to 1) to control curvation degree. But in Catmull-
 ***
 
 ## <a id="bsplinelsection">B-spline
+B-spline is very smooth. However, the control points of this spline are not included in the curve itself. B-spline is great for camera spans or curvature-sensetive things.  
 ![BSpline](https://user-images.githubusercontent.com/70095026/222896302-37c3aa92-2f4b-44fe-8935-8e9061613141.gif)
 ### How it works?
 
