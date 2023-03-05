@@ -84,6 +84,7 @@ public static Vector3 GetPoint(Vector3 p0, Vector3 v0, Vector3 p1, Vector3 v1, f
 ***
 
 ## <a id="catmullsection">Catmull-Rom spline
+This is the most popular type of splines in game development. Because of its ease of construction and sufficient degree of curvature, it is used to create animations and build geometries where smoothness throughout the spline is important.  
 ![Catmull](https://user-images.githubusercontent.com/70095026/222519774-63d88ab6-d2ec-4d29-8a1a-80e2f03a99a3.gif)
 ### How it works?
 
@@ -100,7 +101,9 @@ $$
                         P_1 \cr
                         P_2 \cr
                         P_3} \right\rbrack
-$$
+$$  
+
+To get the tangent (velocity) vectors at the points, we can take the vector between two neighboring points and multiply it by the value `scale`  
 
 Getting velocities for points:
 ```C#
@@ -124,10 +127,11 @@ public static Vector3[] GetVelocities(Vector3[] points, float scale = .5f)
         return velocities;
     }
 ```
-We can change ```scale``` (from 0 to 1) to control curvation degree. But in Catmull-Rom method it's 0,5.  
+For getting points use [Hermite method](#hermitesection)  
+
+We can change `scale` (from 0 to 1) to control curvation degree. But in Catmull-Rom method it's 0,5.  
 ![CatmullScale](https://user-images.githubusercontent.com/70095026/222517405-ecaba1a1-9af7-48bb-b772-275a93b51f69.gif)
 
-For getting points use [Hermite method](#hermitesection)<br>
 ***
 
 ## <a id="bsplinelsection">B-spline
